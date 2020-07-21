@@ -2,14 +2,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace aspnet.Controllers
 {
-    public class OrderController : Controller
+    public class CoursesController : Controller
     {
         public IActionResult Index(){
-            return Content("Ok");            
+            return View();            
         }
 
         public IActionResult Detail(string id){
-            return Content("Ok. ID = " + id);            
+            return View();            
         }
 
         public IActionResult DetailJSON(string id){            
