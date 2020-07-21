@@ -12,7 +12,7 @@ namespace aspnet.Controllers
             return Content("Ok. ID = " + id);            
         }
 
-        public IActionResult DetailJSON(string id){
+        public IActionResult DetailJSON(string id){            
             return Json("Ok. ID = " + id);
         }
     }
