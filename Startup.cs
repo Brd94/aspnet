@@ -26,10 +26,10 @@ namespace aspnet
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseStaticFiles();
+           app.UseStaticFiles();
 
            app.UseMvc(routeBuilder => {
-               routeBuilder.MapRoute("default","{controller}/{action}/{id}");
+               routeBuilder.MapRoute("default","{controller=Home}/{action=Index}/{id?}");
            });
         }
     }
