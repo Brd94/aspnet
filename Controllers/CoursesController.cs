@@ -7,22 +7,31 @@ namespace aspnet.Controllers
 {
     public class CoursesController : Controller
     {
-        public IActionResult Index(){
+        private readonly ICourseService courseService;
+        public CoursesController(ICourseService courseService)
+        {
+            this.courseService = courseService;
+
+        }
+
+        public IActionResult Index()
+        {
             ViewData["Title"] = "Lista corsi!!";
 
-            var courseService = new CourseService();
-            List<CourseViewModel> courses = courseService.getServices();
+            List<CourseViewModel> courses = courseService.GetCourses();
 
-            return View(courses);            
+            return View(courses);
         }
 
-        public IActionResult Detail(string id){
+        public IActionResult Detail(string id)
+        {
 
             ViewData["Title"] = "Dettaglio : " + id;
-            return View();            
+            return View();
         }
 
-        public IActionResult DetailJSON(string id){            
+        public IActionResult DetailJSON(string id)
+        {
             return Json("Ok. ID = " + id);
         }
     }

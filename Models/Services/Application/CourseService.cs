@@ -4,9 +4,14 @@ using aspnet.Models.ViewModels;
 
 namespace aspnet.Models.Services.Application
 {
-    public class CourseService
+    public class CourseService : ICourseService
     {
-        public List<CourseViewModel> getServices()
+        public CourseDetailViewModel GetCourse(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CourseViewModel> GetCourses()
         {
             var clist = new List<CourseViewModel>();
 
@@ -20,5 +25,7 @@ namespace aspnet.Models.Services.Application
 
             return clist;
         }
+
+      
     }
 }
