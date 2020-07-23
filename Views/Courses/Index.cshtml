@@ -1,4 +1,27 @@
+@model List<CourseViewModel>
 
     <h1>
-        Lst crs
+        @ViewData["Title"]     
     </h1>
+
+@foreach (CourseViewModel cr in Model)
+{
+    <div class="row">
+        <div class="col-md-1">
+            <img src="@cr.Img" width="50">
+        </div>
+        <div class="col-md-5">
+            <h2>@cr.Id </h2>
+            @cr.Tipo 
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-2">
+            <a class="btn btn-outline-primary" asp-action="Detail" asp-controller="Courses">DETTAGLIO</a>
+        </div>
+    </div>
+}
